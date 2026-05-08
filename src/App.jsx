@@ -1,17 +1,31 @@
-import './App.css'
+import './App.css';
 
-function App() {
+// no react, componentes são FUNÇÕES
 
-  return (
-    <main>
-      <header>
-        <img src="/logo.png" alt="" />
-      </header>
-      <section>
-        <img src="/banner.png" alt="" />
-      </section>
-    </main>
-  )
+function FormularioDeEvento() {
+    return (
+        <form className="form-evento">
+            <h2>Preencha para criar um evento:</h2>
+            <fieldset>
+                <label htmlFor="nome">Qual o nome do evento?</label>
+                <input type="text" id="nome" />
+            </fieldset>
+        </form>
+    );
 }
 
-export default App
+function App() {
+    return (
+        <main>
+            <header>
+                <img src="/logo.png" alt="" />
+            </header>
+            <section>
+                <img src="/banner.png" alt="" />
+            </section>
+            <FormularioDeEvento />
+        </main>
+    );
+}
+
+export default App;
