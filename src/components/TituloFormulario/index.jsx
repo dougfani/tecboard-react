@@ -1,6 +1,7 @@
+import './titulo-formularios.estilos.css';
 // props é um OBJETO
 // props.children
 
-export function TituloFormulario(props) {
-    return <h2>{props.children}</h2>;
+export function TituloFormulario({ children }) {
+    return <h2 className="titulo-form">{children}</h2>;
 }
