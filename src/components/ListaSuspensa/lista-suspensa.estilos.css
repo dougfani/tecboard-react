@@ -1,0 +1,19 @@
+.lista-suspensa {
+    /* background-color: turquoise; */
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid #4a4949;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #4a4949;
+    padding: 8px 16px;
+}
+
+.lista-suspensa:hover {
+    border: 1px solid #ffffff;
+}
+
+:is(.lista-suspensa):open {
+    background-color: transparent;
+}

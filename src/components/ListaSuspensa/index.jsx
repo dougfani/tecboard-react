@@ -1,6 +1,8 @@
-export function ListaSuspensa({children, htmlFor}) {
+import './lista-suspensa.estilos.css';
+
+export function ListaSuspensa({ children, htmlFor }) {
     return (
-        <select htmlFor={htmlFor}>
+        <select htmlFor={htmlFor} className="lista-suspensa">
             {children}
         </select>
     );

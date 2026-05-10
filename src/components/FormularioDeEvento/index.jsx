@@ -4,6 +4,7 @@ import { CampoDeFormulario } from '../CampoDeFormulario';
 import { Label } from '../Label';
 import { TituloFormulario } from '../TituloFormulario';
 import { ListaSuspensa } from '../ListaSuspensa';
+import { Botao } from '../Botao/botao';
 
 export function FormularioDeEvento() {
     return (
@@ -35,6 +36,7 @@ export function FormularioDeEvento() {
                         <option value="cloud">Cloud</option>
                     </ListaSuspensa>
                 </CampoDeFormulario>
+                <Botao type="submit">Criar evento</Botao>
             </div>
         </form>
     );
