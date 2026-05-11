@@ -1,4 +1,5 @@
 import './App.css';
+import { Banner } from './components/Banner';
 import { FormularioDeEvento } from './components/FormularioDeEvento';
 import { Tema } from './components/Tema';
 // no react, componentes são FUNÇÕES
@@ -36,9 +37,7 @@ function App() {
             <header>
                 <img src="/logo.png" alt="" />
             </header>
-            <section>
-                <img src="/banner.png" alt="" />
-            </section>
+            <Banner></Banner>
             <FormularioDeEvento />
             <section>
                 <Tema tema={temas[0]} />
