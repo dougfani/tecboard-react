@@ -42,18 +42,25 @@ function App() {
         },
     ];
 
+    function adicionarEvento(evento) {
+        eventos.push(evento);
+        console.log('eventos => ', eventos);
+    }
+
     return (
         <main>
             <header>
                 <img src="/logo.png" alt="" />
             </header>
             <Banner></Banner>
-            <FormularioDeEvento temas={temas} />
+            <FormularioDeEvento temas={temas} aoSubmeter={adicionarEvento} />
             {temas.map(function (item) {
                 return (
                     <section key={item.id}>
                         <Tema tema={item} />
-                        <CardEvento evento={eventos[0]} />
+                        {eventos.map(function (item, index) {
+                            return <CardEvento evento={item} key={index} />;
+                        })}
                     </section>
                 );
             })}
