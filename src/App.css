@@ -20,3 +20,25 @@ header {
     gap: 24px;
     flex-wrap: wrap;
 }
+
+footer {
+    margin-top: 78px;
+    padding: 16px;
+    background-color: #06151a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+footer img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+footer p {
+    color: #ffffff;
+    margin: 0px;
+    font-size: 13px;
+}
