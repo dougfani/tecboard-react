@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './App.css';
 import { Banner } from './components/Banner';
 import { CardEvento } from './components/CardEvento';
@@ -49,7 +49,7 @@ function App() {
         // console.log('eventos => ', eventos);
         setEventos([...eventos, evento]);
     }
-
+    // renderização condicional usando &&
     return (
         <main>
             <header>
@@ -57,16 +57,31 @@ function App() {
             </header>
             <Banner></Banner>
             <FormularioDeEvento temas={temas} aoSubmeter={adicionarEvento} />
-            {temas.map(function (item) {
-                return (
-                    <section key={item.id}>
-                        <Tema tema={item} />
-                        {eventos.map(function (item, index) {
-                            return <CardEvento evento={item} key={index} />;
-                        })}
-                    </section>
-                );
-            })}
+            <section className="container">
+                {temas.map(function (tema) {
+                    if (
+                        !eventos.some(function (evento) {
+                            return evento.tema.id == tema.id;
+                        })
+                    ) {
+                        return null;
+                    }
+                    return (
+                        <section key={tema.id}>
+                            <Tema tema={tema} />
+                            <div className="eventos">
+                                {eventos
+                                    .filter(function (evento) {
+                                        return evento.tema.id == tema.id;
+                                    })
+                                    .map(function (evento, index) {
+                                        return <CardEvento evento={evento} key={index} />;
+                                    })}
+                            </div>
+                        </section>
+                    );
+                })}
+            </section>
         </main>
     );
 }
