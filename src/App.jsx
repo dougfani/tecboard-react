@@ -82,6 +82,10 @@ function App() {
                     );
                 })}
             </section>
+            <footer>
+                <img src="/logo.png" alt="" />
+                <p>Desenvolvido por Douglas Floriano durante o curso de React    da Alura.</p>
+            </footer>
         </main>
     );
 }
