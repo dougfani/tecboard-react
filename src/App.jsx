@@ -35,19 +35,13 @@ function App() {
     ];
 
     // hook
-    const [eventos, setEventos] = useState([
-        {
-            capa: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png',
-            tema: temas[0],
-            data: new Date(),
-            titulo: 'Mulheres no Front',
-        },
-    ]);
+    const eventosSalvos = JSON.parse(localStorage.getItem('eventos')) || [];
+    const [eventos, setEventos] = useState(eventosSalvos);
 
     function adicionarEvento(evento) {
-        // eventos.push(evento);
-        // console.log('eventos => ', eventos);
-        setEventos([...eventos, evento]);
+        const novaLista = [...eventos, evento];
+        setEventos(novaLista);
+        localStorage.setItem('eventos', JSON.stringify(novaLista));
     }
     // renderização condicional usando &&
     return (
@@ -84,7 +78,7 @@ function App() {
             </section>
             <footer>
                 <img src="/logo.png" alt="" />
-                <p>Desenvolvido por Douglas Floriano durante o curso de React    da Alura.</p>
+                <p>Desenvolvido por Douglas Floriano durante o curso de React da Alura.</p>
             </footer>
         </main>
     );

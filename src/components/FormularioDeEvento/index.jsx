@@ -8,7 +8,6 @@ import { Botao } from '../Botao';
 
 export function FormularioDeEvento({ temas, aoSubmeter }) {
     function aoFormSubmetido(formData) {
-        console.log('opa, ta na hora de criar um novo evento', formData);
         const evento = {
             capa: formData.get('capa'),
             tema: temas.find(function (item) {
